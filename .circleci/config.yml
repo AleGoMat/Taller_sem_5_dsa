@@ -32,16 +32,8 @@ jobs:
             railway link 3b1c75f5-fa92-4544-86fa-b24f8777442e ff1825ab-4fdc-4ee2-9d8d-f524f0b4d46d
             railway up --detach
 
-
-tags_only: &tags_only
-  filters:
-    branches:
-      ignore: /.*/
-    tags:
-      only: /^.*/
-
 workflows:
-  version: 1
+  version: 2
   deploy_pipeline:
     jobs:
       - deploy_app_to_railway:
