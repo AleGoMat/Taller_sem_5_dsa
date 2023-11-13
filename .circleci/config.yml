@@ -32,12 +32,20 @@ jobs:
             railway link 85ffeac1-579d-4a9a-9ab4-abe4c5d556ba 498cf921-d763-4ec6-b78f-8a5d06629f10
             railway up --detach
 
+
+tags_only: &tags_only
+  filters:
+    branches:
+      ignore: /.*/
+    tags:
+      only: /^.*/
+
 workflows:
-  version: 2
+  version: 1
   deploy_pipeline:
     jobs:
       - deploy_app_to_railway:
           filters:
             branches:
               only:
-                - main
+                - master
